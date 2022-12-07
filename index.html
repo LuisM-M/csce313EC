@@ -62,14 +62,26 @@
         <p> Terra&prime;s global file space is split up into two file systems, the Home and Scratch file systems. The Home file system, which has an environment variable named $HOME, uses the DSS-G260 storage hardware. It also has a file space quota of 10 GB and file counts quota of 10000. The main purpose of the Home file system is from a small amount of processing because its space and file count limits are very constricted. This is also why it is saved every night, because it is easy to fill up that space. On the other hand, the Scratch file system has an environment variable name of $SCRATCH, but it also uses the DSS-G260 storage hardware. However, it has a lot more storage space as its file space quota is a whopping 1 TB and its file count quota is 250000. Unlike the Home file system, the Scratch file system is built as a high performance system that is meant to hold large files for short periods of time and only for processes that are using it at that time. It is important to note that nothing will be backed up with the Scratch file system because it is not meant to be used as a large term storage unit. This is why it is important to clear the system of unnecessary items whenever possible.
         </p>
 
-        <h2> Supercomputer History</h2>
-        <p> BEANS</p>
+        <h1> FASTER</h1>
+        <h2> Hardware</h2>
+        <p> The FASTER supercomputer at Texas A&M University is a supercomputer that has a total of 11,520 cores and 180 nodes. It runs on Linux, or more specifically, it has CentOS 8 installed. CentOS is an operating system that provides an open-source computing platform. This supercomputer resides in the West Campus Data center which is 1.7 miles from the Memorial Student Center. The FASTER supercomputer was produced in 2021 and it has a peak performance of 1.2 PFLOPS (Peta Floating Point Operations Per Second). FASTER is a 184-node Dell x86 HPC Cluster that also has an InfiniBand HDR-10 interconnect. While its peak performance is not as robust as Grace or Terra, it is superior to an everyday laptop or pc. </p>
 
-        <h2> Supercomputer History</h2>
-        <p> BEANS</p>
+        <h2> File Systems</h2>
+        <p> FASTER has a global file space that is accessible on every node. The two main file systems are the Scratch and Home file systems. The Home directory is listed as: “/home/USERID” and the Scratch directory is separated into two directories including: “/scratch/user/USERID” and “/scratch/group/PROJECTID”. 
+            The home directory has a File Space Quota of 10 Gigabytes and a File Count Quota of 10,000. This directory is used for computations that are not too complex. One key thing to note is that it is regularly backed up during the night.
+            On the other hand, the first Scratch directory has a File Space Quota of 1 Terabyte and a File Count Quota of 250,000. This directory performs at a higher level due to its increased storage. This storage allows the user to store larger files for a brief amount of time. In contrast to the previous directory, it does not get backed up frequently. The current directory is used for storing files for an extended amount of time.
+            The second Scratch directory has a File Space Quota of 5 Terabytes and a File Count Quote of 500,000. The last storage can only be accessed upon unique requests. The files in this directory have to be purged after 90 days.
+            Something interesting about the FASTER supercomputer is the process for transferring files. The High Performance Research Computing Wiki states that one can use MobaXterm or WinSCP for transferring files from FASTER to a Windows machine.
+            
+            </p>
 
-        <h2> Supercomputer History</h2>
-        <p> BEANS</p>
+        <h1> Overall</h1>
+        <h2> Batch Summary</h2>
+        <p> The three supercomputers use the Slurm system to control batch jobs. This handles all background processes that the user does not interact with. The user is able to create new jobs using the Slurm format. When creating a job through Slurm, one must set numerous parameters such as a name, task count, and wall clock limit (WCL). The WCL value determines how long a job can run before it is killed. There are also other optional parameters that can be set for a job such as an email notification, general resource, and setting temporary disc space. After setting all of these specifications, there must be a list of the executable commands that will be used for the job. Once this is complete, a Slurm file can be submitted with the sbatch command, which will finish creating the job. Jobs can subsequently be monitored through various commands that allow the user to view the status of a job and kill it if necessary. Batch queues are used to schedule all running jobs, and do so based on their significant parameters such as WCL. The user can also check the status of the queues. If the WCL is reached for a job, its progress can be saved and resumed later without having to restart completely.</p>
+
+        <h2> Compiling and Running Programs</h2>
+        <p> There are numerous compilers supported such as icpc and ifort. When invoked numerous flags can be passed to modify their behavior, such as changing the name of the resulting executable and skipping linking. One can also modify the compiler’s optimization settings that can tell the compiler to use more invasive optimization techniques and attempt to implement parallel programming to speed up the execution. OpenMP code can be compiled using settings that allow parallel code to be executed efficiently. MPI code can be compiled in a similar manner, with support for compilers such as gcc and g++.
+        </p>
 
         <h2> Supercomputer History</h2>
         <p> BEANS</p>
